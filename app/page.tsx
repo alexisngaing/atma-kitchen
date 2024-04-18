@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <main>
       <h1>Home</h1>
-      <div className="content-center">
+      <div className="">
         <Image src="/images/info.jpg" alt="tes" width={500} height={400} />
       </div>
     </main>
