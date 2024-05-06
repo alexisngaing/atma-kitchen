@@ -1,4 +1,7 @@
 import React from "react";
+import Image from "next/image";
+import TestImg from "@/public/images/info.jpg";
+import { UserRound } from "lucide-react";
 
 const Navbar = () => {
   return (
@@ -36,7 +39,7 @@ const Navbar = () => {
                   <input
                     type="search"
                     id="default-search"
-                    className="p-4 ps-10 w-96 text-sm text-gray-900 border border-gray-300 rounded-xl bg-gray-50 bg-opacity-20 focus:ring-[#FDA403] focus:border-[#FDA403]"
+                    className="p-4 ps-10 w-96 text-md text-white border border-gray-300 rounded-xl bg-gray-50 bg-opacity-20 focus:ring-[#FDA403] focus:border-[#FDA403]"
                   />
                 </div>
               </form>
@@ -62,12 +65,23 @@ const Navbar = () => {
             </ul>
           </div>
           <div className="flex gap-2 order-2 md:order-3">
-            <button className="px-4 py-2 text-[#FDA403] hover:bg-[#f5cf89] border border-white rounded-xl flex items-center gap-2">
+            <a
+              href="/auth/login"
+              className="px-4 py-2 text-[#FDA403] hover:bg-[#f5cf89] border border-white rounded-xl flex items-center gap-2"
+            >
               <span>Masuk</span>
-            </button>
-            <button className="px-4 py-2 bg-[#FDA403] hover:bg-[#d48e0e] text-gray-50 rounded-xl flex items-center gap-2">
+            </a>
+            <a
+              href="/auth/register"
+              className="px-4 py-2 bg-[#FDA403] hover:bg-[#d48e0e] text-gray-50 rounded-xl flex items-center gap-2"
+            >
               <span>Daftar</span>
-            </button>
+            </a>
+            <a href="/user_profile">
+              <div className="relative justify-center items-center bg-gray-300 overflow-hidden w-10 h-10 rounded-full">
+                <Image className="absolute" src={TestImg} alt={""} />
+              </div>
+            </a>
           </div>
         </div>
       </nav>

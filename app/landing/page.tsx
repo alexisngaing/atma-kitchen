@@ -1,15 +1,16 @@
 import React from "react";
 import Hero from "@/components/landing/Hero";
-import Navbar from "@/components/landing/Navbar";
-import Footer from "@/components/landing/Footer";
+import Category from "@/components/landing/Category";
+import Recommendation from "@/components/landing/Recommendation";
+import Etc from "@/components/landing/Etc";
 
 const Landing = () => {
   return (
     <>
       <Hero />
-      <div>
-        <div className="h-96">fnjkwedjwdjkqw</div>
-      </div>
+      <Category />
+      <Recommendation />
+      <Etc />
     </>
   );
 };

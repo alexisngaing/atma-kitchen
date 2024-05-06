@@ -42,7 +42,6 @@ const Login = () => {
                     placeholder="johndoe"
                   />
                 </div>
-
                 <div className="max-w-sm">
                   <label htmlFor="password" className="block text-sm mb-2">
                     Password
@@ -88,19 +87,26 @@ const Login = () => {
                     </button>
                   </div>
                 </div>
-
                 <p className="text-sm text-end font-light text-gray-500">
                   <a href="#" className="font-medium hover:underline">
                     Lupa username atau password?
                   </a>
                 </p>
-
                 <button
                   type="submit"
                   className="w-full text-white bg-[#FDA403] hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
                 >
                   Login
                 </button>
+                <p className="text-sm text-center font-light text-gray-500">
+                  Belum punya akun?{" "}
+                  <a
+                    href="/auth/register"
+                    className="font-medium hover:underline"
+                  >
+                    <span className="text-[#FDA403]">Daftar</span>
+                  </a>
+                </p>
               </form>
             </div>
           </div>
