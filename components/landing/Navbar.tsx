@@ -9,7 +9,9 @@ const Navbar = () => {
       <nav className="absolute w-full px-8 md:px-auto">
         <div className="fixed top-3 inset-0 md:h-16 h-28 mx-auto md:px-4 container flex items-center justify-between flex-wrap">
           <div className="flex gap-6 items-center">
-            <div className="text-[#FDA403] font-bold">ATMA KITCHEN</div>
+            <a href="/landing">
+              <div className="text-[#FDA403] font-bold">ATMA KITCHEN</div>
+            </a>
             <div>
               <form className="max-w-md mx-auto">
                 <label
@@ -77,7 +79,7 @@ const Navbar = () => {
             >
               <span>Daftar</span>
             </a>
-            <a href="/user_profile">
+            <a href="/user_profile/profile">
               <div className="relative justify-center items-center bg-gray-300 overflow-hidden w-10 h-10 rounded-full">
                 <Image className="absolute" src={TestImg} alt={""} />
               </div>
