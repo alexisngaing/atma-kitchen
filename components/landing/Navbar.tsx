@@ -10,7 +10,9 @@ const Navbar = () => {
         <div className="fixed top-3 inset-0 md:h-16 h-28 mx-auto md:px-4 container flex items-center justify-between flex-wrap">
           <div className="flex gap-6 items-center">
             <a href="/landing">
-              <div className="text-[#FDA403] font-bold">ATMA KITCHEN</div>
+              <div className="text-[#41B06E] text-xl font-bold">
+                ATMA KITCHEN
+              </div>
             </a>
             <div>
               <form className="max-w-md mx-auto">
@@ -47,21 +49,21 @@ const Navbar = () => {
               </form>
             </div>
           </div>
-          <div className="text-gray-500 order-3 w-full md:w-auto md:order-2">
+          <div className="text-white order-3 w-full md:w-auto md:order-2">
             <ul className="flex font-semibold justify-between">
-              <li className="md:px-4 md:py-2 text-[#FDA403]">
+              <li className="md:px-4 md:py-2 text-[#8DECB4]">
                 <a href="#">Beranda</a>
               </li>
-              <li className="md:px-4 md:py-2 hover:text-[#f5cf89]">
+              <li className="md:px-4 md:py-2 hover:text-[#8DECB4]">
                 <a href="#">Menu</a>
               </li>
-              <li className="md:px-4 md:py-2 hover:text-[#f5cf89]">
+              <li className="md:px-4 md:py-2 hover:text-[#8DECB4]">
                 <a href="#">Blog</a>
               </li>
-              <li className="md:px-4 md:py-2 hover:text-[#f5cf89]">
+              <li className="md:px-4 md:py-2 hover:text-[#8DECB4]">
                 <a href="#">Tentang</a>
               </li>
-              <li className="md:px-4 md:py-2 hover:text-[#f5cf89]">
+              <li className="md:px-4 md:py-2 hover:text-[#8DECB4]">
                 <a href="#">Kontak</a>
               </li>
             </ul>
@@ -69,13 +71,13 @@ const Navbar = () => {
           <div className="flex gap-2 order-2 md:order-3">
             <a
               href="/auth/login"
-              className="px-4 py-2 text-[#FDA403] hover:bg-[#f5cf89] border border-white rounded-xl flex items-center gap-2"
+              className="px-4 py-2 text-white hover:bg-[#8DECB4] border border-white rounded-xl flex items-center gap-2"
             >
               <span>Masuk</span>
             </a>
             <a
               href="/auth/register"
-              className="px-4 py-2 bg-[#FDA403] hover:bg-[#d48e0e] text-gray-50 rounded-xl flex items-center gap-2"
+              className="px-4 py-2 bg-[#41B06E] hover:bg-[#8DECB4] text-gray-50 rounded-xl flex items-center gap-2"
             >
               <span>Daftar</span>
             </a>

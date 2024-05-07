@@ -8,7 +8,7 @@ import AppleImg from "@/public/images/app-store.svg";
 const Footer = () => {
   return (
     <>
-      <div className="bg-[#FDA403]">
+      <div className="bg-[#41B06E]">
         <div className="pt-16 pb-52">
           <div className="flex gap-16 justify-center w-full text-white">
             <div className="">

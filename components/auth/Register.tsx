@@ -17,7 +17,7 @@ const Register = () => {
         <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
           <a
             href="#"
-            className="flex items-center mb-6 text-3xl font-semibold text-[#FDA403]"
+            className="flex items-center mb-6 text-3xl font-semibold text-[#41B06E]"
           >
             ATMA KITCHEN
           </a>
@@ -153,7 +153,7 @@ const Register = () => {
                 <div className="flex items-start"></div>
                 <button
                   type="submit"
-                  className="w-full text-white bg-[#FDA403] hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+                  className="w-full text-white bg-[#41B06E] hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
                 >
                   Daftar
                 </button>
@@ -161,7 +161,7 @@ const Register = () => {
                   Sudah punya akun?{" "}
                   <a
                     href="/auth/login"
-                    className="font-medium text-[#FDA403] hover:underline"
+                    className="font-medium text-[#41B06E] hover:underline"
                   >
                     Masuk
                   </a>
