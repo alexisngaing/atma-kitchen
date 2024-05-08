@@ -8,7 +8,7 @@ const Profile = () => {
       <div className="py-32 mx-auto w-9/12 lg:w-5/12">
         <div className="flex gap-4 pb-4 font-semibold">
           <a href="/user_profile/profile">
-            <p className="text-[#FDA403]">Profil</p>
+            <p className="text-[#41B06E]">Profil</p>
           </a>
           <a href="/user_profile/address">
             <p className="text-gray-500">Alamat</p>
@@ -95,7 +95,7 @@ const Profile = () => {
                     </div>
                   </div>
                 </div>
-                <button className="bg-[#FDA403] w-40 text-white rounded-xl p-3 font-semibold">
+                <button className="bg-[#41B06E] w-40 text-white rounded-xl p-3 font-semibold">
                   Simpan
                 </button>
               </div>

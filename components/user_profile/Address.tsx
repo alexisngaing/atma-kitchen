@@ -90,7 +90,7 @@ const Address: FC = () => {
             <p className="text-gray-500">Profil</p>
           </a>
           <a href="/user_profile/address">
-            <p className="text-[#FDA403]">Alamat</p>
+            <p className="text-[#41B06E]">Alamat</p>
           </a>
         </div>
         <div className="flex gap-6 justify-center items-center">
@@ -102,7 +102,7 @@ const Address: FC = () => {
               <button
                 onClick={() => setShowModal(true)}
                 type="button"
-                className="flex gap-2 bg-[#FDA403] items-center rounded-xl p-3 font-semibold text-white"
+                className="flex gap-2 bg-[#41B06E] items-center rounded-xl p-3 font-semibold text-white"
               >
                 <Plus />
                 Tambah Alamat

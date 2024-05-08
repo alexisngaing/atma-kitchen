@@ -1,14 +1,48 @@
 "use client";
 
-import { useState } from "react";
-import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
+import swal from "sweetalert";
+
+async function loginUser(credentials: any) {
+  return fetch("https://api.atmakitchen.ninja/v1/auth/login", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": "*",
+    },
+    body: JSON.stringify(credentials),
+    mode: "cors",
+  }).then((data) => data.json());
+}
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
 
   const togglePassword = () => {
     setShowPassword(!showPassword);
+  };
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = async (e: any) => {
+    e.preventDefault();
+    const response = await loginUser({
+      email,
+      password,
+    });
+    if ("accessToken" in response) {
+      swal("Success", response.message, "success", {
+        buttons: [],
+        timer: 2000,
+      }).then((value) => {
+        localStorage.setItem("accessToken", response["accessToken"]);
+        localStorage.setItem("user", JSON.stringify(response["user"]));
+        window.location.href = "/landing";
+      });
+    } else {
+      swal("Failed", response.message, "error");
+    }
   };
 
   return (
@@ -26,20 +60,26 @@ const Login = () => {
               <h1 className="text-xl text-center font-bold leading-tight tracking-tight text-gray-900 md:text-2xl">
                 Login
               </h1>
-              <form className="space-y-4 md:space-y-6" action="#">
+              <form
+                className="space-y-4 md:space-y-6"
+                noValidate
+                onSubmit={handleSubmit}
+              >
                 <div>
                   <label
-                    htmlFor="username"
+                    htmlFor="email"
                     className="block mb-2 text-sm font-medium text-gray-900"
                   >
-                    Username
+                    Email
                   </label>
                   <input
-                    type="username"
-                    name="username"
-                    id="username"
+                    type="email"
+                    name="email"
+                    id="email"
                     className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-full p-2.5 "
-                    placeholder="johndoe"
+                    placeholder="johndoe@atmakitchen.ninja"
+                    required
+                    onChange={(e) => setEmail(e.target.value)}
                   />
                 </div>
                 <div className="max-w-sm">
@@ -52,6 +92,8 @@ const Login = () => {
                       type={showPassword ? "text" : "password"}
                       className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
                       placeholder="••••••••"
+                      required
+                      onChange={(e) => setPassword(e.target.value)}
                     />
                     <button
                       type="button"
