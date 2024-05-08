@@ -13,6 +13,9 @@ const Profile = () => {
           <a href="/user_profile/address">
             <p className="text-gray-500">Alamat</p>
           </a>
+          <a href="/user_profile/histori_pemesanan">
+            <p className="text-gray-500">Histori Pemesanan</p>
+          </a>
         </div>
         <div className="flex gap-6 justify-center items-center">
           <div className="flex border rounded-xl w-full p-5 gap-10">
