@@ -19,6 +19,30 @@ const authenticate = async ({ email, password }: { email: string; password: stri
   }
 };
 
+const register = async ({
+  fullName,
+  email,
+  password,
+}: {
+  fullName: string;
+  email: string;
+  password: string;
+}) => {
+  try {
+    const response = await axios.post("http://127.0.0.1:3000/v1/auth/register", {
+      fullName,
+      email,
+      password,
+    });
+
+    const data = response.data as { status: string };
+
+    return response.status === 201 && data.status === "ok";
+  } catch (error) {
+    return null;
+  }
+};
+
 const sendVerificationEmail = async (email: string, accessToken: string) => {
   try {
     const response = await axios.post(
@@ -33,7 +57,9 @@ const sendVerificationEmail = async (email: string, accessToken: string) => {
       },
     );
 
-    return response.status === 201;
+    const data = response.data as { status: string };
+
+    return response.status === 201 && data.status === "ok";
   } catch (error) {
     return false;
   }
@@ -55,4 +81,4 @@ const verifyEmail = async (accessToken: string) => {
   }
 };
 
-export { authenticate, sendVerificationEmail, verifyEmail };
+export { authenticate, register, sendVerificationEmail, verifyEmail };

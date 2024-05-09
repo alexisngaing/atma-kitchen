@@ -170,7 +170,7 @@ const Login = () => {
                     Login
                   </button>
                   <p className="text-center text-sm font-light text-gray-500">
-                    Belum punya akun?
+                    Belum punya akun?{" "}
                     <a className="font-medium hover:underline" href="/auth/register">
                       <span className="text-[#41B06E]">Daftar</span>
                     </a>
