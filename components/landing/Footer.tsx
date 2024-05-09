@@ -7,64 +7,62 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <>
-      <div className="bg-[#41B06E]">
-        <div className="pb-52 pt-16">
-          <div className="flex w-full justify-center gap-16 text-white">
-            <div className="">
-              <h3 className="pb-2 text-lg font-semibold">Atma Kitchen</h3>
+    <div className="bg-[#41B06E]">
+      <div className="pb-52 pt-16">
+        <div className="flex w-full justify-center gap-16 text-white">
+          <div className="">
+            <h3 className="pb-2 text-lg font-semibold">Atma Kitchen</h3>
+            <a href="#">
+              <p>Tentang Atma Kitchen</p>
+            </a>
+            <a href="#">
+              <p>Bantuan</p>
+            </a>
+            <a href="#">
+              <p>Syarat & Ketentuan</p>
+            </a>
+            <a href="#">
+              <p>Kontak</p>
+            </a>
+          </div>
+          <div className="">
+            <h3 className="pb-2 text-lg font-semibold">Ikuti Kami</h3>
+            <a href="#">
+              <p>Instagram</p>
+            </a>
+            <a href="#">
+              <p>Facebook</p>
+            </a>
+            <a href="#">
+              <p>Twitter/X</p>
+            </a>
+            <a href="#">
+              <p>LinkedIn</p>
+            </a>
+          </div>
+          <div className="">
+            <h3 className="pb-2 text-lg font-semibold">Keamanan & Privasi</h3>
+            <a href="#">
+              <Image alt="" className="max-w-32" src={ISO} />
+            </a>
+          </div>
+          <div className="">
+            <h3 className="pb-2 text-lg font-semibold">Download Aplikasi Atma Kitchen</h3>
+            <div className="flex gap-2">
               <a href="#">
-                <p>Tentang Atma Kitchen</p>
+                <Image alt="" className="max-w-32" src={GoogleImg} />
               </a>
               <a href="#">
-                <p>Bantuan</p>
+                <Image alt="" className="max-w-32" src={AppleImg} />
               </a>
-              <a href="#">
-                <p>Syarat & Ketentuan</p>
-              </a>
-              <a href="#">
-                <p>Kontak</p>
-              </a>
-            </div>
-            <div className="">
-              <h3 className="pb-2 text-lg font-semibold">Ikuti Kami</h3>
-              <a href="#">
-                <p>Instagram</p>
-              </a>
-              <a href="#">
-                <p>Facebook</p>
-              </a>
-              <a href="#">
-                <p>Twitter/X</p>
-              </a>
-              <a href="#">
-                <p>LinkedIn</p>
-              </a>
-            </div>
-            <div className="">
-              <h3 className="pb-2 text-lg font-semibold">Keamanan & Privasi</h3>
-              <a href="#">
-                <Image className="max-w-32" src={ISO} alt={""} />
-              </a>
-            </div>
-            <div className="">
-              <h3 className="pb-2 text-lg font-semibold">Download Aplikasi Atma Kitchen</h3>
-              <div className="flex gap-2">
-                <a href="#">
-                  <Image className="max-w-32" src={GoogleImg} alt={""} />
-                </a>
-                <a href="#">
-                  <Image className="max-w-32" src={AppleImg} alt={""} />
-                </a>
-              </div>
             </div>
           </div>
         </div>
-        <div className="flex justify-center py-4 font-medium text-white">
-          <p>© 2024 Atma Kitchen. Hak Cipta Dilindungi Undang-Undang.</p>
-        </div>
       </div>
-    </>
+      <div className="flex justify-center py-4 font-medium text-white">
+        <p>© 2024 Atma Kitchen. Hak Cipta Dilindungi Undang-Undang.</p>
+      </div>
+    </div>
   );
 };
 

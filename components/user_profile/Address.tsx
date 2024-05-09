@@ -1,8 +1,6 @@
 "use client";
 
-import { Plus } from "lucide-react";
-import { FilePenLine } from "lucide-react";
-import { Trash2 } from "lucide-react";
+import { FilePenLine, Plus, Trash2 } from "lucide-react";
 import React, { FC, useEffect, useState } from "react";
 
 const Address: FC = () => {
@@ -18,7 +16,9 @@ const Address: FC = () => {
                   <h3 className="text-3xl font-semibold">Tambahkan Alamat</h3>
                   <button
                     className="float-right ml-auto border-0 bg-transparent p-1 text-3xl font-semibold leading-none text-black opacity-5 outline-none focus:outline-none"
-                    onClick={() => setShowModal(false)}
+                    onClick={() => {
+                      setShowModal(false);
+                    }}
                   >
                     <span className="block h-6 w-6 bg-transparent text-2xl text-black opacity-5 outline-none focus:outline-none">
                       x
@@ -33,9 +33,9 @@ const Address: FC = () => {
                       </label>
                       <input
                         className="w-full rounded-xl border border-gray-300 bg-gray-50 p-2"
-                        type="text"
                         id="name"
                         name="name"
+                        type="text"
                       />
                     </div>
                     <div>
@@ -44,36 +44,40 @@ const Address: FC = () => {
                       </label>
                       <input
                         className="w-full rounded-xl border border-gray-300 bg-gray-50 p-2"
-                        type="text"
                         id="phone"
                         name="phone"
+                        type="text"
                       />
                     </div>
                     <div>
-                      <label htmlFor="address" className="block pb-2">
+                      <label className="block pb-2" htmlFor="address">
                         Alamat
                       </label>
                       <textarea
-                        id="address"
-                        rows={4}
                         className="block w-full rounded-xl border border-gray-300 bg-gray-50 p-2.5 text-sm"
+                        id="address"
                         placeholder="Write your thoughts here..."
-                      ></textarea>
+                        rows={4}
+                      />
                     </div>
                   </div>
                 </div>
                 <div className="border-blueGray-200 flex items-center justify-end rounded-b border-t border-solid p-6">
                   <button
                     className="background-transparent mb-1 mr-1 px-6 py-2 text-sm font-bold text-red-500 outline-none transition-all duration-150 ease-linear focus:outline-none"
+                    onClick={() => {
+                      setShowModal(false);
+                    }}
                     type="button"
-                    onClick={() => setShowModal(false)}
                   >
                     Keluar
                   </button>
                   <button
                     className="mb-1 mr-1 rounded-xl bg-[#FDA403] px-6 py-3 text-sm font-bold text-white shadow outline-none transition-all duration-150 ease-linear hover:shadow-lg focus:outline-none active:bg-emerald-600"
+                    onClick={() => {
+                      setShowModal(false);
+                    }}
                     type="button"
-                    onClick={() => setShowModal(false)}
                   >
                     Simpan
                   </button>
@@ -81,7 +85,7 @@ const Address: FC = () => {
               </div>
             </div>
           </div>
-          <div className="fixed inset-0 z-40 bg-black opacity-25"></div>
+          <div className="fixed inset-0 z-40 bg-black opacity-25" />
         </>
       ) : null}
       <div className="mx-auto w-9/12 pb-72 pt-32 lg:w-5/12">
@@ -101,20 +105,22 @@ const Address: FC = () => {
             <div className="flex justify-between pb-6">
               <h3 className="flex items-center text-xl font-semibold text-gray-500">Alamat Saya</h3>
               <button
-                onClick={() => setShowModal(true)}
-                type="button"
                 className="flex items-center gap-2 rounded-xl bg-[#41B06E] p-3 font-semibold text-white"
+                onClick={() => {
+                  setShowModal(true);
+                }}
+                type="button"
               >
                 <Plus />
                 Tambah Alamat
               </button>
             </div>
-            <div className="border"></div>
+            <div className="border" />
             <div className="flex justify-between">
               <div className="w-3/6 pt-6">
                 <div className="flex gap-6">
                   <h3 className="font-semibold">Stepanus Pramudya Filio Pambudi</h3>
-                  <div className="border border-gray-500"></div>
+                  <div className="border border-gray-500" />
                   <h3>0812345696969</h3>
                 </div>
                 <div className="pt-3">

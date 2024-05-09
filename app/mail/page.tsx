@@ -2,11 +2,7 @@ import Mail from "@/components/MailVerification";
 import React from "react";
 
 const Landing = () => {
-  return (
-    <>
-      <Mail />
-    </>
-  );
+  return <Mail />;
 };
 
 export default Landing;

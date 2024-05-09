@@ -47,21 +47,21 @@ export const MailVerification = ({ validationLink }: MailVerificationProps) => (
               <h3 className="font-semibold text-[#41B06E]">Atma Kitchen</h3>
             </Column>
             <Column>
-              <Section></Section>
+              <Section />
             </Column>
           </Row>
         </Section>
 
         <Section>
-          <Link style={footerLink} href="#" target="_blank" rel="noopener noreferrer">
+          <Link href="#" rel="noopener noreferrer" style={footerLink} target="_blank">
             Blog
           </Link>
           &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-          <Link style={footerLink} href="#" target="_blank" rel="noopener noreferrer">
+          <Link href="#" rel="noopener noreferrer" style={footerLink} target="_blank">
             Ketentuan
           </Link>
           &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-          <Link style={footerLink} href="#" target="_blank" rel="noopener noreferrer">
+          <Link href="#" rel="noopener noreferrer" style={footerLink} target="_blank">
             Bantuan
           </Link>
           <Text style={footerText}>
