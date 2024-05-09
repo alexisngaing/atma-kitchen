@@ -15,4 +15,21 @@ const getUserProfile = async (accessToken: string) => {
   }
 };
 
-export { getUserProfile };
+const updateUserProfile = async (
+  accessToken: string,
+  data: { fullName: string; dob: string; gender: string },
+) => {
+  try {
+    const response = await axios.patch("http://127.0.0.1:3000/v1/me", data, {
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
+    });
+
+    return response.status === 200;
+  } catch (error) {
+    return false;
+  }
+};
+
+export { getUserProfile, updateUserProfile };

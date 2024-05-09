@@ -1,16 +1,14 @@
-import React from "react";
-
-const HistoriPemesanan = () => {
+const Order = () => {
   return (
     <div className="mx-auto w-9/12 py-32 lg:w-5/12">
       <div className="flex gap-4 pb-4 font-semibold">
-        <a href="/user_profile/profile">
+        <a href="me">
           <p className="text-gray-500">Profil</p>
         </a>
-        <a href="/user_profile/address">
+        <a href="addresses">
           <p className="text-gray-500">Alamat</p>
         </a>
-        <a href="/user_profile/histori_pemesanan">
+        <a href="orders">
           <p className="text-[#41B06E]">Histori Pemesanan</p>
         </a>
       </div>
@@ -56,4 +54,4 @@ const HistoriPemesanan = () => {
   );
 };
 
-export default HistoriPemesanan;
+export default Order;

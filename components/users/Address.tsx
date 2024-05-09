@@ -1,7 +1,7 @@
 "use client";
 
 import { FilePenLine, Plus, Trash2 } from "lucide-react";
-import React, { FC, useEffect, useState } from "react";
+import { FC, useState } from "react";
 
 const Address: FC = () => {
   const [showModal, setShowModal] = useState(false);
@@ -19,6 +19,7 @@ const Address: FC = () => {
                     onClick={() => {
                       setShowModal(false);
                     }}
+                    type="button"
                   >
                     <span className="block h-6 w-6 bg-transparent text-2xl text-black opacity-5 outline-none focus:outline-none">
                       x
@@ -90,13 +91,13 @@ const Address: FC = () => {
       ) : null}
       <div className="mx-auto w-9/12 pb-72 pt-32 lg:w-5/12">
         <div className="flex gap-4 pb-4 font-semibold">
-          <a href="/user_profile/profile">
+          <a href="me">
             <p className="text-gray-500">Profil</p>
           </a>
-          <a href="/user_profile/address">
+          <a href="addresses">
             <p className="text-[#41B06E]">Alamat</p>
           </a>
-          <a href="/user_profile/histori_pemesanan">
+          <a href="orders">
             <p className="text-gray-500">Histori Pemesanan</p>
           </a>
         </div>
@@ -131,16 +132,12 @@ const Address: FC = () => {
                 </div>
               </div>
               <div className="flex items-center gap-2">
-                <a href="">
-                  <button className="flex items-center rounded-lg bg-green-500 p-1 text-white">
-                    <FilePenLine />
-                  </button>
-                </a>
-                <a href="">
-                  <button className="flex items-center rounded-lg bg-red-500 p-1 text-white">
-                    <Trash2 />
-                  </button>
-                </a>
+                <button className="flex items-center rounded-lg bg-green-500 p-1 text-white">
+                  <FilePenLine />
+                </button>
+                <button className="flex items-center rounded-lg bg-red-500 p-1 text-white">
+                  <Trash2 />
+                </button>
               </div>
             </div>
           </div>

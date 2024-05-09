@@ -23,9 +23,9 @@ const LoginForm = () => {
     <Formik
       initialValues={{ email: "", password: "" }}
       onSubmit={async ({ email, password }) => {
-        const newAccessToken = await authenticate({ email, password });
-        if (newAccessToken) {
-          const userData = decodeToken(newAccessToken) as UserTokenData;
+        const accessToken = await authenticate({ email, password });
+        if (accessToken) {
+          const userData = decodeToken(accessToken) as UserTokenData;
 
           if (!userData.active) {
             await Swal.fire({
@@ -35,7 +35,7 @@ const LoginForm = () => {
               showConfirmButton: true,
             });
 
-            const status = await sendVerificationEmail(email, newAccessToken);
+            const status = await sendVerificationEmail(email, accessToken);
             if (status) {
               await Swal.fire({
                 title: "Success",
@@ -60,6 +60,7 @@ const LoginForm = () => {
             showConfirmButton: false,
             timer: 2000,
           });
+          localStorage.setItem("accessToken", accessToken);
           window.location.href = "/";
         } else {
           await Swal.fire({
@@ -71,12 +72,11 @@ const LoginForm = () => {
       }}
       validationSchema={toFormikValidationSchema(Schema)}
     >
-      {({ errors, isSubmitting }) => (
+      {({ isSubmitting }) => (
         <Form className="space-y-4 md:space-y-6">
           <div>
             <label className="mb-2 block text-sm font-medium text-gray-900" htmlFor="email">
               Email
-              {errors.email && <p className="text-sm text-red-500">{errors.email}</p>}
               <Field
                 className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 sm:text-sm "
                 id="email"

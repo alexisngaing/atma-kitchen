@@ -1,7 +1,7 @@
-import HistoriPemesanan from "@/components/users/HistoriPemesanan";
+import Order from "@/components/users/Order";
 
 const OrderPage = () => {
-  return <HistoriPemesanan />;
+  return <Order />;
 };
 
 export default OrderPage;
