@@ -1,12 +1,12 @@
-import React from "react";
 import { ChevronRight } from "lucide-react";
+import React from "react";
 
 const Etc = () => {
   return (
     <>
-      <div className="pt-16 pb-40 flex items-center justify-center">
+      <div className="flex items-center justify-center pb-40 pt-16">
         <a href="#">
-          <button className="flex bg-[#41B06E] text-white rounded-xl shadow-xl p-4 font-semibold text-2xl">
+          <button className="flex rounded-xl bg-[#41B06E] p-4 text-2xl font-semibold text-white shadow-xl">
             Lihat Semua Produk
             <ChevronRight />
           </button>

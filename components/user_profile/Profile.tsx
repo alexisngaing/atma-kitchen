@@ -1,11 +1,11 @@
-import React from "react";
-import Image from "next/image";
 import TestImg from "@/public/images/info.jpg";
+import Image from "next/image";
+import React from "react";
 
 const Profile = () => {
   return (
     <>
-      <div className="py-32 mx-auto w-9/12 lg:w-5/12">
+      <div className="mx-auto w-9/12 py-32 lg:w-5/12">
         <div className="flex gap-4 pb-4 font-semibold">
           <a href="/user_profile/profile">
             <p className="text-[#41B06E]">Profil</p>
@@ -17,22 +17,20 @@ const Profile = () => {
             <p className="text-gray-500">Histori Pemesanan</p>
           </a>
         </div>
-        <div className="flex gap-6 justify-center items-center">
-          <div className="flex border rounded-xl w-full p-5 gap-10">
+        <div className="flex items-center justify-center gap-6">
+          <div className="flex w-full gap-10 rounded-xl border p-5">
             <div>
-              <div className="bg-white max-w-96 p-5 border rounded-xl overflow-hidden shadow-lg">
+              <div className="max-w-96 overflow-hidden rounded-xl border bg-white p-5 shadow-lg">
                 <a href="#">
                   <Image className="w-full" src={TestImg} alt="" />
-                  <div className="py-6 text-center font-semibold text-xl">
-                    <button className="p-4 w-full border rounded-lg">
-                      Pilih Gambar
-                    </button>
+                  <div className="py-6 text-center text-xl font-semibold">
+                    <button className="w-full rounded-lg border p-4">Pilih Gambar</button>
                   </div>
                 </a>
               </div>
-              <div className="text-center pt-6 font-semibold text-lg">
+              <div className="pt-6 text-center text-lg font-semibold">
                 <a href="">
-                  <button className="rounded-xl p-5 border border-gray-300 w-full">
+                  <button className="w-full rounded-xl border border-gray-300 p-5">
                     Ubah Password
                   </button>
                 </a>
@@ -40,7 +38,7 @@ const Profile = () => {
             </div>
             <form action="">
               <div className="">
-                <div className="font-semibold text-lg text-gray-500">
+                <div className="text-lg font-semibold text-gray-500">
                   <h3>Profil Saya</h3>
                   <div className="py-2">
                     <label htmlFor="name" className="font-normal">
@@ -50,7 +48,7 @@ const Profile = () => {
                       type="text"
                       name="name"
                       id="name"
-                      className="w-full border p-2 rounded-xl"
+                      className="w-full rounded-xl border p-2"
                     />
                   </div>
                   <div className="py-2">
@@ -61,7 +59,7 @@ const Profile = () => {
                       type="date"
                       name="tanggal-lahir"
                       id="tanggal-lahir"
-                      className="w-full border p-2 rounded-xl"
+                      className="w-full rounded-xl border p-2"
                     />
                   </div>
                   <div className="py-2">
@@ -71,14 +69,14 @@ const Profile = () => {
                     <select
                       name="gender"
                       id="gender"
-                      className="border border-gray-300 text-sm rounded-lg block w-full p-2.5  "
+                      className="block w-full rounded-lg border border-gray-300 p-2.5 text-sm  "
                     >
                       <option value="male">Laki-laki</option>
                       <option value="female">Perempuan</option>
                     </select>
                   </div>
                 </div>
-                <div className="py-6 font-semibold text-gray-500 text-lg">
+                <div className="py-6 text-lg font-semibold text-gray-500">
                   <h3>Kontak Saya</h3>
                   <div className="py-2">
                     <label htmlFor="email" className="font-normal">
@@ -90,15 +88,15 @@ const Profile = () => {
                     <label htmlFor="phone" className="font-normal">
                       Nomor HP
                     </label>
-                    <div className="flex font-normal gap-4">
+                    <div className="flex gap-4 font-normal">
                       <p>08123456789</p>
                       <a href="">
-                        <p className="underline text-base">Ubah No. HP</p>
+                        <p className="text-base underline">Ubah No. HP</p>
                       </a>
                     </div>
                   </div>
                 </div>
-                <button className="bg-[#41B06E] w-40 text-white rounded-xl p-3 font-semibold">
+                <button className="w-40 rounded-xl bg-[#41B06E] p-3 font-semibold text-white">
                   Simpan
                 </button>
               </div>

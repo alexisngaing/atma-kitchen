@@ -1,8 +1,8 @@
-import React from "react";
-import Hero from "@/components/landing/Hero";
 import Category from "@/components/landing/Category";
-import Recommendation from "@/components/landing/Recommendation";
 import Etc from "@/components/landing/Etc";
+import Hero from "@/components/landing/Hero";
+import Recommendation from "@/components/landing/Recommendation";
+import React from "react";
 
 const Landing = () => {
   return (

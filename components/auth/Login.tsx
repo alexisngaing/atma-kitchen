@@ -48,49 +48,39 @@ const Login = () => {
   return (
     <>
       <section className="bg-gray-50 ">
-        <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
-          <a
-            href="#"
-            className="flex items-center mb-6 text-3xl font-semibold text-[#41B06E]"
-          >
+        <div className="mx-auto flex flex-col items-center justify-center px-6 py-8 md:h-screen lg:py-0">
+          <a href="#" className="mb-6 flex items-center text-3xl font-semibold text-[#41B06E]">
             ATMA KITCHEN
           </a>
-          <div className="w-full bg-white rounded-lg shadow md:mt-0 sm:max-w-md xl:p-0 ">
-            <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
-              <h1 className="text-xl text-center font-bold leading-tight tracking-tight text-gray-900 md:text-2xl">
+          <div className="w-full rounded-lg bg-white shadow sm:max-w-md md:mt-0 xl:p-0 ">
+            <div className="space-y-4 p-6 sm:p-8 md:space-y-6">
+              <h1 className="text-center text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl">
                 Login
               </h1>
-              <form
-                className="space-y-4 md:space-y-6"
-                noValidate
-                onSubmit={handleSubmit}
-              >
+              <form className="space-y-4 md:space-y-6" noValidate onSubmit={handleSubmit}>
                 <div>
-                  <label
-                    htmlFor="email"
-                    className="block mb-2 text-sm font-medium text-gray-900"
-                  >
+                  <label htmlFor="email" className="mb-2 block text-sm font-medium text-gray-900">
                     Email
                   </label>
                   <input
                     type="email"
                     name="email"
                     id="email"
-                    className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-full p-2.5 "
+                    className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 sm:text-sm "
                     placeholder="johndoe@atmakitchen.ninja"
                     required
                     onChange={(e) => setEmail(e.target.value)}
                   />
                 </div>
                 <div className="max-w-sm">
-                  <label htmlFor="password" className="block text-sm mb-2">
+                  <label htmlFor="password" className="mb-2 block text-sm">
                     Password
                   </label>
                   <div className="relative">
                     <input
                       id="password"
                       type={showPassword ? "text" : "password"}
-                      className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
+                      className="focus:ring-primary-600 focus:border-primary-600 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 sm:text-sm"
                       placeholder="••••••••"
                       required
                       onChange={(e) => setPassword(e.target.value)}
@@ -101,10 +91,10 @@ const Login = () => {
                       data-hs-toggle-password='{
         "target": "#hs-toggle-password"
       }'
-                      className="absolute top-0 end-0 p-3.5 rounded-e-md"
+                      className="absolute end-0 top-0 rounded-e-md p-3.5"
                     >
                       <svg
-                        className="flex-shrink-0 size-3.5 text-gray-400"
+                        className="size-3.5 flex-shrink-0 text-gray-400"
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
@@ -129,23 +119,20 @@ const Login = () => {
                     </button>
                   </div>
                 </div>
-                <p className="text-sm text-end font-light text-gray-500">
+                <p className="text-end text-sm font-light text-gray-500">
                   <a href="#" className="font-medium hover:underline">
                     Lupa username atau password?
                   </a>
                 </p>
                 <button
                   type="submit"
-                  className="w-full text-white bg-[#41B06E] hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+                  className="hover:bg-primary-700 focus:ring-primary-300 w-full rounded-lg bg-[#41B06E] px-5 py-2.5 text-center text-sm font-medium text-white focus:outline-none focus:ring-4"
                 >
                   Login
                 </button>
-                <p className="text-sm text-center font-light text-gray-500">
+                <p className="text-center text-sm font-light text-gray-500">
                   Belum punya akun?{" "}
-                  <a
-                    href="/auth/register"
-                    className="font-medium hover:underline"
-                  >
+                  <a href="/auth/register" className="font-medium hover:underline">
                     <span className="text-[#41B06E]">Daftar</span>
                   </a>
                 </p>

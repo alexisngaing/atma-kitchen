@@ -1,18 +1,18 @@
-import React from "react";
-import { Instagram, Twitter, Linkedin, Facebook } from "lucide-react";
-import Image from "next/image";
-import ISO from "@/public/images/logo-iso.png";
-import GoogleImg from "@/public/images/google-play.png";
 import AppleImg from "@/public/images/app-store.svg";
+import GoogleImg from "@/public/images/google-play.png";
+import ISO from "@/public/images/logo-iso.png";
+import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
+import Image from "next/image";
+import React from "react";
 
 const Footer = () => {
   return (
     <>
       <div className="bg-[#41B06E]">
-        <div className="pt-16 pb-52">
-          <div className="flex gap-16 justify-center w-full text-white">
+        <div className="pb-52 pt-16">
+          <div className="flex w-full justify-center gap-16 text-white">
             <div className="">
-              <h3 className="font-semibold text-lg pb-2">Atma Kitchen</h3>
+              <h3 className="pb-2 text-lg font-semibold">Atma Kitchen</h3>
               <a href="#">
                 <p>Tentang Atma Kitchen</p>
               </a>
@@ -27,7 +27,7 @@ const Footer = () => {
               </a>
             </div>
             <div className="">
-              <h3 className="font-semibold text-lg pb-2">Ikuti Kami</h3>
+              <h3 className="pb-2 text-lg font-semibold">Ikuti Kami</h3>
               <a href="#">
                 <p>Instagram</p>
               </a>
@@ -42,15 +42,13 @@ const Footer = () => {
               </a>
             </div>
             <div className="">
-              <h3 className="font-semibold text-lg pb-2">Keamanan & Privasi</h3>
+              <h3 className="pb-2 text-lg font-semibold">Keamanan & Privasi</h3>
               <a href="#">
                 <Image className="max-w-32" src={ISO} alt={""} />
               </a>
             </div>
             <div className="">
-              <h3 className="font-semibold text-lg pb-2">
-                Download Aplikasi Atma Kitchen
-              </h3>
+              <h3 className="pb-2 text-lg font-semibold">Download Aplikasi Atma Kitchen</h3>
               <div className="flex gap-2">
                 <a href="#">
                   <Image className="max-w-32" src={GoogleImg} alt={""} />
@@ -62,7 +60,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="flex font-medium justify-center py-4 text-white">
+        <div className="flex justify-center py-4 font-medium text-white">
           <p>© 2024 Atma Kitchen. Hak Cipta Dilindungi Undang-Undang.</p>
         </div>
       </div>

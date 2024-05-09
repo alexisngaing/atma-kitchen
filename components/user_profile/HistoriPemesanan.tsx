@@ -3,7 +3,7 @@ import React from "react";
 const HistoriPemesanan = () => {
   return (
     <>
-      <div className="py-32 mx-auto w-9/12 lg:w-5/12">
+      <div className="mx-auto w-9/12 py-32 lg:w-5/12">
         <div className="flex gap-4 pb-4 font-semibold">
           <a href="/user_profile/profile">
             <p className="text-gray-500">Profil</p>
@@ -15,19 +15,19 @@ const HistoriPemesanan = () => {
             <p className="text-[#41B06E]">Histori Pemesanan</p>
           </a>
         </div>
-        <div className="flex gap-6 justify-center items-center">
-          <div className="border rounded-xl w-full p-5 gap-10 h-96">
+        <div className="flex items-center justify-center gap-6">
+          <div className="h-96 w-full gap-10 rounded-xl border p-5">
             <form className="max-w-md pb-6">
               <label
                 htmlFor="default-search"
-                className="mb-2 text-sm font-medium text-gray-900 sr-only"
+                className="sr-only mb-2 text-sm font-medium text-gray-900"
               >
                 Search
               </label>
               <div className="relative">
-                <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                <div className="pointer-events-none absolute inset-y-0 start-0 flex items-center ps-3">
                   <svg
-                    className="w-4 h-4"
+                    className="h-4 w-4"
                     aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -45,7 +45,7 @@ const HistoriPemesanan = () => {
                 <input
                   type="search"
                   id="default-search"
-                  className="p-4 ps-10 w-96 text-md border border-gray-300 rounded-xl bg-gray-50 bg-opacity-20 focus:ring-[#FDA403] focus:border-[#FDA403]"
+                  className="text-md w-96 rounded-xl border border-gray-300 bg-gray-50 bg-opacity-20 p-4 ps-10 focus:border-[#FDA403] focus:ring-[#FDA403]"
                   placeholder="Cari histori pemesanan"
                 />
               </div>

@@ -1,5 +1,5 @@
-import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
+import Navbar from "@/components/landing/Navbar";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 

@@ -1,31 +1,29 @@
-import React from "react";
-import Image from "next/image";
 import TestImg from "@/public/images/info.jpg";
 import { UserRound } from "lucide-react";
+import Image from "next/image";
+import React from "react";
 
 const Navbar = () => {
   return (
     <>
-      <nav className="absolute w-full px-8 md:px-auto">
-        <div className="fixed top-3 inset-0 md:h-16 h-28 mx-auto md:px-4 container flex items-center justify-between flex-wrap">
-          <div className="flex gap-6 items-center">
+      <nav className="md:px-auto absolute w-full px-8">
+        <div className="container fixed inset-0 top-3 mx-auto flex h-28 flex-wrap items-center justify-between md:h-16 md:px-4">
+          <div className="flex items-center gap-6">
             <a href="/landing">
-              <div className="text-[#41B06E] text-xl font-bold">
-                ATMA KITCHEN
-              </div>
+              <div className="text-xl font-bold text-[#41B06E]">ATMA KITCHEN</div>
             </a>
             <div>
-              <form className="max-w-md mx-auto">
+              <form className="mx-auto max-w-md">
                 <label
                   htmlFor="default-search"
-                  className="mb-2 text-sm font-medium text-gray-900 sr-only"
+                  className="sr-only mb-2 text-sm font-medium text-gray-900"
                 >
                   Search
                 </label>
                 <div className="relative">
-                  <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                  <div className="pointer-events-none absolute inset-y-0 start-0 flex items-center ps-3">
                     <svg
-                      className="w-4 h-4 text-white"
+                      className="h-4 w-4 text-white"
                       aria-hidden="true"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -43,46 +41,46 @@ const Navbar = () => {
                   <input
                     type="search"
                     id="default-search"
-                    className="p-4 ps-10 w-96 text-md text-white border border-gray-300 rounded-xl bg-gray-50 bg-opacity-20 focus:ring-[#FDA403] focus:border-[#FDA403]"
+                    className="text-md w-96 rounded-xl border border-gray-300 bg-gray-50 bg-opacity-20 p-4 ps-10 text-white focus:border-[#FDA403] focus:ring-[#FDA403]"
                   />
                 </div>
               </form>
             </div>
           </div>
-          <div className="text-white order-3 w-full md:w-auto md:order-2">
-            <ul className="flex font-semibold justify-between">
-              <li className="md:px-4 md:py-2 text-[#8DECB4]">
+          <div className="order-3 w-full text-white md:order-2 md:w-auto">
+            <ul className="flex justify-between font-semibold">
+              <li className="text-[#8DECB4] md:px-4 md:py-2">
                 <a href="#">Beranda</a>
               </li>
-              <li className="md:px-4 md:py-2 hover:text-[#8DECB4]">
+              <li className="hover:text-[#8DECB4] md:px-4 md:py-2">
                 <a href="#">Menu</a>
               </li>
-              <li className="md:px-4 md:py-2 hover:text-[#8DECB4]">
+              <li className="hover:text-[#8DECB4] md:px-4 md:py-2">
                 <a href="#">Blog</a>
               </li>
-              <li className="md:px-4 md:py-2 hover:text-[#8DECB4]">
+              <li className="hover:text-[#8DECB4] md:px-4 md:py-2">
                 <a href="#">Tentang</a>
               </li>
-              <li className="md:px-4 md:py-2 hover:text-[#8DECB4]">
+              <li className="hover:text-[#8DECB4] md:px-4 md:py-2">
                 <a href="#">Kontak</a>
               </li>
             </ul>
           </div>
-          <div className="flex gap-2 order-2 md:order-3">
+          <div className="order-2 flex gap-2 md:order-3">
             <a
               href="/auth/login"
-              className="px-4 py-2 text-white hover:bg-[#8DECB4] border border-white rounded-xl flex items-center gap-2"
+              className="flex items-center gap-2 rounded-xl border border-white px-4 py-2 text-white hover:bg-[#8DECB4]"
             >
               <span>Masuk</span>
             </a>
             <a
               href="/auth/register"
-              className="px-4 py-2 bg-[#41B06E] hover:bg-[#8DECB4] text-gray-50 rounded-xl flex items-center gap-2"
+              className="flex items-center gap-2 rounded-xl bg-[#41B06E] px-4 py-2 text-gray-50 hover:bg-[#8DECB4]"
             >
               <span>Daftar</span>
             </a>
             <a href="/user_profile/profile">
-              <div className="relative justify-center items-center bg-gray-300 overflow-hidden w-10 h-10 rounded-full">
+              <div className="relative h-10 w-10 items-center justify-center overflow-hidden rounded-full bg-gray-300">
                 <Image className="absolute" src={TestImg} alt={""} />
               </div>
             </a>

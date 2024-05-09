@@ -1,7 +1,7 @@
 import {
   Body,
-  Container,
   Column,
+  Container,
   Head,
   Heading,
   Html,
@@ -18,9 +18,7 @@ interface MailVerificationProps {
   validationLink?: string;
 }
 
-const baseUrl = process.env.VERCEL_URL
-  ? `https://${process.env.VERCEL_URL}`
-  : "";
+const baseUrl = process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "";
 
 export const MailVerification = ({ validationLink }: MailVerificationProps) => (
   <Html>
@@ -28,30 +26,25 @@ export const MailVerification = ({ validationLink }: MailVerificationProps) => (
     <Preview>Confirm your email address</Preview>
     <Body style={main}>
       <Container style={container}>
-        <h1 className="text-[#41B06E] font-bold text-5xl text-center pt-10">
-          ATMA KITCHEN
-        </h1>
+        <h1 className="pt-10 text-center text-5xl font-bold text-[#41B06E]">ATMA KITCHEN</h1>
         <Heading style={h1}>Konfirmasi alamat email Anda</Heading>
         <Text style={heroText}>
-          Klik link di bawah ini untuk mengonfirmasi alamat email Anda dan
-          menyelesaikan proses registrasi.
+          Klik link di bawah ini untuk mengonfirmasi alamat email Anda dan menyelesaikan proses
+          registrasi.
         </Text>
 
         <Section style={codeBox}>
-          <Text style={confirmationLinkText}>
-            --Link Here-- {validationLink} --Link Here--
-          </Text>
+          <Text style={confirmationLinkText}>--Link Here-- {validationLink} --Link Here--</Text>
         </Section>
 
         <Text style={text}>
-          Jika Anda tidak meminta verifikasi email ini, Anda dapat mengabaikan
-          pesan ini.
+          Jika Anda tidak meminta verifikasi email ini, Anda dapat mengabaikan pesan ini.
         </Text>
 
         <Section>
           <Row style={footerLogos}>
             <Column style={{ width: "66%" }}>
-              <h3 className="text-[#41B06E] font-semibold">Atma Kitchen</h3>
+              <h3 className="font-semibold text-[#41B06E]">Atma Kitchen</h3>
             </Column>
             <Column>
               <Section></Section>
@@ -60,36 +53,21 @@ export const MailVerification = ({ validationLink }: MailVerificationProps) => (
         </Section>
 
         <Section>
-          <Link
-            style={footerLink}
-            href="#"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <Link style={footerLink} href="#" target="_blank" rel="noopener noreferrer">
             Blog
           </Link>
           &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-          <Link
-            style={footerLink}
-            href="#"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <Link style={footerLink} href="#" target="_blank" rel="noopener noreferrer">
             Ketentuan
           </Link>
           &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-          <Link
-            style={footerLink}
-            href="#"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <Link style={footerLink} href="#" target="_blank" rel="noopener noreferrer">
             Bantuan
           </Link>
           <Text style={footerText}>
             ©2024 Atma Kitchen. <br />
-            Jl. Babarsari No.44, Janti, Caturtunggal, Kec. Depok, Kabupaten
-            Sleman, Daerah Istimewa Yogyakarta 55281 <br />
+            Jl. Babarsari No.44, Janti, Caturtunggal, Kec. Depok, Kabupaten Sleman, Daerah Istimewa
+            Yogyakarta 55281 <br />
             <br />
             Hak Cipta Dilindungi Undang-Undang.
           </Text>
