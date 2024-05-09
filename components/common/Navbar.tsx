@@ -1,14 +1,13 @@
+import { isAuthenticated } from "@/guards";
 import TestImg from "@/public/images/info.jpg";
-import { UserRound } from "lucide-react";
 import Image from "next/image";
-import React from "react";
 
 const Navbar = () => {
   return (
     <nav className="md:px-auto absolute w-full px-8">
       <div className="container fixed inset-0 top-3 mx-auto flex h-28 flex-wrap items-center justify-between md:h-16 md:px-4">
         <div className="flex items-center gap-6">
-          <a href="/landing">
+          <a href="/">
             <div className="text-xl font-bold text-[#41B06E]">ATMA KITCHEN</div>
           </a>
           <div>
@@ -49,40 +48,53 @@ const Navbar = () => {
         <div className="order-3 w-full text-white md:order-2 md:w-auto">
           <ul className="flex justify-between font-semibold">
             <li className="text-[#8DECB4] md:px-4 md:py-2">
-              <a href="#">Beranda</a>
+              <a href="/">Beranda</a>
             </li>
             <li className="hover:text-[#8DECB4] md:px-4 md:py-2">
-              <a href="#">Menu</a>
+              <a href="/products">Menu</a>
             </li>
             <li className="hover:text-[#8DECB4] md:px-4 md:py-2">
-              <a href="#">Blog</a>
+              <a href="/blog">Blog</a>
             </li>
             <li className="hover:text-[#8DECB4] md:px-4 md:py-2">
-              <a href="#">Tentang</a>
+              <a href="/about-us">Tentang</a>
             </li>
             <li className="hover:text-[#8DECB4] md:px-4 md:py-2">
-              <a href="#">Kontak</a>
+              <a href="/contacts">Kontak</a>
             </li>
           </ul>
         </div>
         <div className="order-2 flex gap-2 md:order-3">
-          <a
-            className="flex items-center gap-2 rounded-xl border border-white px-4 py-2 text-white hover:bg-[#8DECB4]"
-            href="/auth/login"
-          >
-            <span>Masuk</span>
-          </a>
-          <a
-            className="flex items-center gap-2 rounded-xl bg-[#41B06E] px-4 py-2 text-gray-50 hover:bg-[#8DECB4]"
-            href="/auth/register"
-          >
-            <span>Daftar</span>
-          </a>
-          <a href="/user_profile/profile">
-            <div className="relative h-10 w-10 items-center justify-center overflow-hidden rounded-full bg-gray-300">
-              <Image alt="" className="absolute" src={TestImg} />
-            </div>
-          </a>
+          {isAuthenticated() ? (
+            <>
+              <a href="/users/me">
+                <div className="relative h-10 w-10 items-center justify-center overflow-hidden rounded-full bg-gray-300">
+                  <Image alt="" className="absolute" src={TestImg} />
+                </div>
+              </a>
+              <a
+                className="flex items-center gap-2 rounded-xl bg-[#41B06E] px-4 py-2 text-gray-50 hover:bg-[#8DECB4]"
+                href="/auth/logout"
+              >
+                Logout
+              </a>
+            </>
+          ) : (
+            <>
+              <a
+                className="flex items-center gap-2 rounded-xl border border-white px-4 py-2 text-white hover:bg-[#8DECB4]"
+                href="/auth/login"
+              >
+                <span>Masuk</span>
+              </a>
+              <a
+                className="flex items-center gap-2 rounded-xl bg-[#41B06E] px-4 py-2 text-gray-50 hover:bg-[#8DECB4]"
+                href="/auth/register"
+              >
+                <span>Daftar</span>
+              </a>
+            </>
+          )}
         </div>
       </div>
     </nav>

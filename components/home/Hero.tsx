@@ -1,6 +1,4 @@
 import { ChevronRight } from "lucide-react";
-import Image from "next/image";
-import React from "react";
 
 const Hero = () => {
   return (
@@ -12,8 +10,11 @@ const Hero = () => {
             <h1 className="pb-6 text-8xl font-bold text-white">
               Belanja kapan saja dan di mana saja
             </h1>
-            <a href="#">
-              <button className="flex rounded-xl bg-[#41B06E] p-4 text-2xl font-semibold text-white shadow-xl">
+            <a href="/">
+              <button
+                className="flex rounded-xl bg-[#41B06E] p-4 text-2xl font-semibold text-white shadow-xl"
+                type="button"
+              >
                 Order Sekarang!
                 <ChevronRight />
               </button>

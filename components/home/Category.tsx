@@ -1,5 +1,5 @@
 import Cake from "@/public/images/cake.jpeg";
-import getAllCategories from "@/services/category.service";
+import { getAllCategories } from "@/services";
 import Image from "next/image";
 
 const Category = async () => {
@@ -15,7 +15,7 @@ const Category = async () => {
               key={category.id}
               className="max-w-md overflow-hidden rounded-xl bg-[#41B06E] shadow-lg"
             >
-              <a href="#">
+              <a href="/">
                 <Image alt="" className="h-56 w-96" src={Cake} />
                 <div className="mb-2 px-6 py-6 text-center text-2xl first-line:font-semibold">
                   {category.name}

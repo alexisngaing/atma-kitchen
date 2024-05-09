@@ -23,8 +23,17 @@
   ],
   "rules": {
     "import/prefer-default-export": "off",
+    "jsx-a11y/label-has-associated-control": [
+      "error",
+      {
+        // "labelComponents": ["CustomInputLabel"],
+        // "labelAttributes": ["label"],
+        // "controlComponents": ["Field"],
+        // "depth": 3
+      }
+    ],
     "react/function-component-definition": [
-      2,
+      "error",
       {
         "namedComponents": "arrow-function",
         "unnamedComponents": "arrow-function"

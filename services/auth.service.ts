@@ -4,7 +4,7 @@ const authenticate = async ({ email, password }: { email: string; password: stri
   try {
     let accessToken: string | null = null;
 
-    const response = await axios.post("http://127.0.0.1:3000/v1/auth/login", {
+    const response = await axios.post("http://127.0.0.1:3001/api/auth/login", {
       email,
       password,
     });
@@ -41,6 +41,10 @@ const register = async ({
   } catch (error) {
     return null;
   }
+};
+
+const logout = () => {
+  localStorage.removeItem("accessToken");
 };
 
 const sendVerificationEmail = async (email: string, accessToken: string) => {
@@ -81,4 +85,4 @@ const verifyEmail = async (accessToken: string) => {
   }
 };
 
-export { authenticate, register, sendVerificationEmail, verifyEmail };
+export { authenticate, logout, register, sendVerificationEmail, verifyEmail };

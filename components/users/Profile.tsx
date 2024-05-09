@@ -1,18 +1,20 @@
-import TestImg from "@/public/images/info.jpg";
-import Image from "next/image";
-import React from "react";
+import { getUserProfile } from "@/services/users.service";
+import { cookies } from "next/headers";
 
-const Profile = () => {
+const Profile = async () => {
+  const accessToken = cookies().get("session")?.value as string;
+  const user = await getUserProfile(accessToken);
+
   return (
     <div className="mx-auto w-9/12 py-32 lg:w-5/12">
       <div className="flex gap-4 pb-4 font-semibold">
-        <a href="/user_profile/profile">
+        <a href="me">
           <p className="text-[#41B06E]">Profil</p>
         </a>
-        <a href="/user_profile/address">
+        <a href="addresses">
           <p className="text-gray-500">Alamat</p>
         </a>
-        <a href="/user_profile/histori_pemesanan">
+        <a href="orders">
           <p className="text-gray-500">Histori Pemesanan</p>
         </a>
       </div>
@@ -20,19 +22,21 @@ const Profile = () => {
         <div className="flex w-full gap-10 rounded-xl border p-5">
           <div>
             <div className="max-w-96 overflow-hidden rounded-xl border bg-white p-5 shadow-lg">
-              <a href="#">
-                <Image alt="" className="w-full" src={TestImg} />
-                <div className="py-6 text-center text-xl font-semibold">
-                  <button className="w-full rounded-lg border p-4">Pilih Gambar</button>
-                </div>
-              </a>
+              <img
+                alt={user?.fullName as string}
+                className="w-full"
+                src={`http://127.0.0.1:8055/assets/${user?.avatar as string}`}
+              />
+              <div className="py-6 text-center text-xl font-semibold">
+                <button className="w-full rounded-lg border p-4" type="button">
+                  Pilih Gambar
+                </button>
+              </div>
             </div>
             <div className="pt-6 text-center text-lg font-semibold">
-              <a href="">
-                <button className="w-full rounded-xl border border-gray-300 p-5">
-                  Ubah Password
-                </button>
-              </a>
+              <button className="w-full rounded-xl border border-gray-300 p-5" type="button">
+                Total Points: {user?.totalPoints}
+              </button>
             </div>
           </div>
           <form action="">
@@ -45,6 +49,7 @@ const Profile = () => {
                   </label>
                   <input
                     className="w-full rounded-xl border p-2"
+                    defaultValue={user?.fullName as string}
                     id="name"
                     name="name"
                     type="text"
@@ -56,6 +61,7 @@ const Profile = () => {
                   </label>
                   <input
                     className="w-full rounded-xl border p-2"
+                    defaultValue={user?.dob as string}
                     id="tanggal-lahir"
                     name="tanggal-lahir"
                     type="date"
@@ -70,8 +76,12 @@ const Profile = () => {
                     id="gender"
                     name="gender"
                   >
-                    <option value="male">Laki-laki</option>
-                    <option value="female">Perempuan</option>
+                    <option selected={user?.gender === "M"} value="m">
+                      Laki-laki
+                    </option>
+                    <option selected={user?.gender === "F"} value="f">
+                      Perempuan
+                    </option>
                   </select>
                 </div>
               </div>
@@ -81,21 +91,22 @@ const Profile = () => {
                   <label className="font-normal" htmlFor="email">
                     Email
                   </label>
-                  <p>emailsaya@gmail.com</p>
+                  <p>{user?.email as string}</p>
                 </div>
                 <div className="py-2">
                   <label className="font-normal" htmlFor="phone">
                     Nomor HP
                   </label>
                   <div className="flex gap-4 font-normal">
-                    <p>08123456789</p>
-                    <a href="">
-                      <p className="text-base underline">Ubah No. HP</p>
-                    </a>
+                    <p>{user?.phoneNumber}</p>
+                    <p className="text-base underline">Ubah No. HP</p>
                   </div>
                 </div>
               </div>
-              <button className="w-40 rounded-xl bg-[#41B06E] p-3 font-semibold text-white">
+              <button
+                className="w-40 rounded-xl bg-[#41B06E] p-3 font-semibold text-white"
+                type="button"
+              >
                 Simpan
               </button>
             </div>

@@ -1,6 +1,6 @@
-import getAllProducts from "@/services/product-service";
+import { getAllProducts } from "@/services";
 
-const Recommendation = async () => {
+const Recommendations = async () => {
   const products = await getAllProducts();
   return (
     <div className="py-16 md:px-24 lg:px-64">
@@ -31,4 +31,4 @@ const Recommendation = async () => {
   );
 };
 
-export default Recommendation;
+export default Recommendations;
