@@ -3,7 +3,7 @@ import axios from "axios";
 
 const getAllCategories = async () => {
   try {
-    const response = await axios.get("http://127.0.0.1:3000/v1/categories", {
+    const response = await axios.get(`${process.env.API_URL as string}/categories`, {
       params: {
         fields: "id,name",
       },

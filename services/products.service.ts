@@ -3,7 +3,7 @@ import axios from "axios";
 
 const getAllProducts = async () => {
   try {
-    const response = await axios.get("http://127.0.0.1:3000/v1/products", {
+    const response = await axios.get(`${process.env.API_URL as string}/products`, {
       params: {
         fields: "id,name,price,quantity,image",
       },

@@ -4,7 +4,7 @@ const authenticate = async ({ email, password }: { email: string; password: stri
   try {
     let accessToken: string | null = null;
 
-    const response = await axios.post("http://127.0.0.1:3001/api/auth/login", {
+    const response = await axios.post("/api/auth/login", {
       email,
       password,
     });
@@ -29,11 +29,14 @@ const register = async ({
   password: string;
 }) => {
   try {
-    const response = await axios.post("http://127.0.0.1:3000/v1/auth/register", {
-      fullName,
-      email,
-      password,
-    });
+    const response = await axios.post(
+      `${process.env.NEXT_PUBLIC_API_URL as string}/auth/register`,
+      {
+        fullName,
+        email,
+        password,
+      },
+    );
 
     const data = response.data as { status: string };
 
@@ -50,7 +53,7 @@ const logout = () => {
 const sendVerificationEmail = async (email: string, accessToken: string) => {
   try {
     const response = await axios.post(
-      "http://127.0.0.1:3000/v1/auth/send-verification-email",
+      `${process.env.NEXT_PUBLIC_API_URL as string}/auth/send-verification-email`,
       {
         email,
       },
@@ -71,11 +74,14 @@ const sendVerificationEmail = async (email: string, accessToken: string) => {
 
 const verifyEmail = async (accessToken: string) => {
   try {
-    const response = await axios.get("http://127.0.0.1:3000/v1/auth/verify-email", {
-      params: {
-        token: accessToken,
+    const response = await axios.get(
+      `${process.env.NEXT_PUBLIC_API_URL as string}/auth/verify-email`,
+      {
+        params: {
+          token: accessToken,
+        },
       },
-    });
+    );
 
     const data = response.data as { status: string };
 

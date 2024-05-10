@@ -1,6 +1,6 @@
 "use client";
 
-import { getUserProfile, updateUserProfile } from "@/services/users.service";
+import { getUserProfile, updateUserProfile } from "@/services";
 import { User } from "@/types";
 import { Field, Form, Formik } from "formik";
 import { useEffect, useState } from "react";

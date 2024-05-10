@@ -3,7 +3,7 @@ import axios from "axios";
 
 const getUserProfile = async (accessToken: string) => {
   try {
-    const response = await axios.get("http://127.0.0.1:3000/v1/me", {
+    const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL as string}/me`, {
       headers: {
         Authorization: `Bearer ${accessToken}`,
       },
@@ -20,7 +20,7 @@ const updateUserProfile = async (
   data: { fullName: string; dob: string; gender: string },
 ) => {
   try {
-    const response = await axios.patch("http://127.0.0.1:3000/v1/me", data, {
+    const response = await axios.patch(`${process.env.NEXT_PUBLIC_API_URL as string}/me`, data, {
       headers: {
         Authorization: `Bearer ${accessToken}`,
       },
