@@ -4,7 +4,6 @@ import { verifyEmail } from "@/services";
 import { useToggle } from "@mantine/hooks";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
-import { decodeToken, isExpired } from "react-jwt";
 
 const VerifyEmailPage = () => {
   const searchParams = useSearchParams();
@@ -14,13 +13,8 @@ const VerifyEmailPage = () => {
 
   useEffect(() => {
     const verify = async () => {
-      if (token && decodeToken(token) && !isExpired(token)) {
-        const tokenData = decodeToken(token) as { verified: boolean };
-        if (!tokenData.verified) {
-          const status = await verifyEmail(token);
-          setIsVerified(status);
-        }
-      }
+      const status = await verifyEmail(token as string);
+      setIsVerified(status);
       setIsLoading(false);
     };
 
