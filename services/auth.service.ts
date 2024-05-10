@@ -91,4 +91,67 @@ const verifyEmail = async (accessToken: string) => {
   }
 };
 
-export { authenticate, logout, register, sendVerificationEmail, verifyEmail };
+const sendOTP = async (email: string) => {
+  try {
+    const response = await axios.post(
+      `${process.env.NEXT_PUBLIC_API_URL as string}/auth/request-reset-password`,
+      {
+        email,
+      },
+    );
+
+    const data = response.data as { status: string };
+
+    return response.status === 201 && data.status === "ok";
+  } catch (error) {
+    return false;
+  }
+};
+
+const verifyOTP = async (email: string, otp: number) => {
+  try {
+    const response = await axios.post(
+      `${process.env.NEXT_PUBLIC_API_URL as string}/auth/verify-otp`,
+      {
+        email,
+        otp,
+      },
+    );
+
+    const data = response.data as { status: string };
+
+    return response.status === 201 && data.status === "ok";
+  } catch (error) {
+    return false;
+  }
+};
+
+const resetPassword = async (email: string, otp: number, password: string) => {
+  try {
+    const response = await axios.post(
+      `${process.env.NEXT_PUBLIC_API_URL as string}/auth/reset-password`,
+      {
+        email,
+        otp,
+        password,
+      },
+    );
+
+    const data = response.data as { status: string };
+
+    return response.status === 201 && data.status === "ok";
+  } catch (error) {
+    return false;
+  }
+};
+
+export {
+  authenticate,
+  logout,
+  register,
+  sendVerificationEmail,
+  verifyEmail,
+  verifyOTP,
+  sendOTP,
+  resetPassword,
+};

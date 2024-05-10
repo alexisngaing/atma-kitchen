@@ -14,10 +14,10 @@ const Recommendations = async () => {
             >
               <a href="#">
                 <img
-                  className="h-64 w-64 w-full"
+                  className="h-64 w-64"
                   crossOrigin="anonymous"
                   referrerPolicy="no-referrer"
-                  src={`http://127.0.0.1:8055/assets/${product.image}`}
+                  src={`${process.env.NEXT_PUBLIC_API_URL as string}/assets/${product.image as string}`}
                 />
                 <div className="mb-2 px-6 py-6 text-center text-2xl first-line:font-semibold">
                   {product.name}

@@ -68,6 +68,7 @@ const Profile = () => {
               fullName: user.fullName,
               dob: user.dob,
               gender: user.gender,
+              phoneNumber: user.phoneNumber,
             }}
             onSubmit={async (values) => {
               const status = await updateUserProfile(accessToken, values);
@@ -139,10 +140,13 @@ const Profile = () => {
                       <label className="font-normal" htmlFor="phone">
                         Nomor HP
                       </label>
-                      <div className="flex gap-4 font-normal">
-                        <p>{user.phoneNumber}</p>
-                        <p className="text-base underline">Ubah No. HP</p>
-                      </div>
+                      <Field
+                        className="w-full rounded-xl border p-2"
+                        defaultValue={user.phoneNumber}
+                        id="phone"
+                        name="phoneNumber"
+                        type="text"
+                      />
                     </div>
                   </div>
                   <button

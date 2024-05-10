@@ -8,7 +8,7 @@ export async function POST(request: NextRequest) {
 
   if (email && password) {
     try {
-      const response = await axios.post("http://127.0.0.1:3000/v1/auth/login", {
+      const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL as string}/auth/login`, {
         email,
         password,
       });
